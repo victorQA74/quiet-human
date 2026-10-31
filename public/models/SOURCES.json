@@ -1,0 +1,18 @@
+{
+  "hand": {
+    "file": "hand.glb",
+    "source": "https://raw.githubusercontent.com/immersive-web/webxr-input-profiles/c5356912d0c3bc43c6db8aa3926d8951a7716449/packages/assets/profiles/generic-hand/right.glb",
+    "license": "MIT",
+    "author": "WebXR Input Profiles contributors; Copyright (c) 2019 Amazon",
+    "sha256": "291790c14f7f88a7f9bd35330c47392ed8e8d395ae6728f4bb7089f1bc1f2b96"
+  },
+  "spider": {
+    "file": "spider.glb",
+    "source": "https://opengameart.org/content/spider",
+    "download": "https://opengameart.org/sites/default/files/spider.7z",
+    "sourceArchiveSha256": "c5dfd406a5438d1e042551fd12c8799f001c2540d97ceb601b4971bbd768f143",
+    "license": "CC-BY-3.0",
+    "author": "sunburn",
+    "changes": "Decimation to ~9k polygons, 8-limb skeleton, surface-conforming karakurt pigmentation, GLB conversion. See scripts/prepare-spider.py."
+  }
+}

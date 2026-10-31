@@ -1,0 +1,11 @@
+import { readFile } from 'node:fs/promises';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { Box3, Vector3 } from 'three';
+const data = await readFile('public/models/hand.glb');
+const jsonSize = data.readUInt32LE(12);
+const json = JSON.parse(data.subarray(20, 20 + jsonSize).toString());
+console.log(JSON.stringify({asset: json.asset, materials: json.materials, meshes: json.meshes.map(m => ({name: m.name, primitives: m.primitives.length})), images: json.images, skins: json.skins?.map(s => ({name:s.name, joints:s.joints.length}))}, null, 2));
+const gltf = await new GLTFLoader().parseAsync(data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength), '');
+gltf.scene.updateMatrixWorld(true);
+console.log('bounds', new Box3().setFromObject(gltf.scene).min.toArray(), new Box3().setFromObject(gltf.scene).max.toArray());
+gltf.scene.traverse(o => { if (o.isBone) console.log(o.name, 'world', o.getWorldPosition(new Vector3()).toArray(), 'local', o.position.toArray(), 'rotation', o.rotation.toArray()); });

@@ -1,0 +1,6 @@
+.asset-loading { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 24px; background: radial-gradient(ellipse at 70% 35%, #51403d, #211f29 72%); }
+.asset-loading > div { width: min(100%, 540px); text-align: center; }
+.asset-loading h2 { font: 600 clamp(26px, 5vw, 38px)/1.2 Georgia, serif; color: #f4ead7; margin: 24px 0; }
+.asset-loading p { color: #c3b8b0; line-height: 1.6; margin-bottom: 28px; }
+.asset-loading button { width: 100%; }
+.asset-loading[hidden] { display: none; }
